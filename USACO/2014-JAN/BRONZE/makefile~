@@ -1,0 +1,2 @@
+slowdown: slowdown.cpp
+	g++ -o slowdown slowdown.cpp

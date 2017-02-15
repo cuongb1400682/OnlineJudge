@@ -1,0 +1,39 @@
+Give you two strings, a and b, through four operations:
+
+Adding a character to take in any position t1
+
+Remove any one of the characters spend as t2
+
+Change any one character takes to t3
+
+Swap adjacent characters spend t4
+
+A character string with the minimum cost becomes b.
+
+If there is no problem on this fourth operation into water dp up.
+So look at the first three operations.
+
+So f [i] [j] indicates a matching string of previous term and
+before i j b a string minimum cost item, then there are
+
+f [i] [j] = min (f [i-1] [j] + t2, f [i] [j-1] + t1);
+
+if (a [i] == b [j]) f [i] [j] = min (f [i] [j], f [i-1] [j-1]);
+else f [i] [j] = min (f [i] [j], f [i-1] [j-1] + t3);
+
+f [i] [0] = t2 * i; f [0] [i] = t1 * i;
+
+Then consider the fourth operation.
+
+If the matching string XXXbXXXa and XXaXXb, when i = 8, j = 6 when you want to
+make a string of 1's 'a' character string 2 'b' character is completed through
+the exchange matching, you must find the string 1 character 'b' character
+found in the string 2 'a', if one can not be found, the state can not be
+obtained through the exchange. Consider pi = 4, pj = 3 has been matched 
+before a good case, if you want to exchange 'a' and 'b' is 'a''b' must be 
+adjacent, remove the string between 1 'b''a' of All elements of cost 
+(i-pi-1) * t2, at this time 'a''b' adjacent exchange ab, spend as t4, all 
+elements add strings 2 'a''b'between spending ( j-pj-1) * t1, this time i, j 
+state by switching complete match. Know the meaning of the questions 
+2 · te ≥ ti + td represents two characters spend more than the exchange of 
+and additions, and deletions.

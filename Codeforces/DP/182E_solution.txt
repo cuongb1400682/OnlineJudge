@@ -1,0 +1,11 @@
+182E - Wooden Fence
+
+Conditions of the problem was formulated incorrectly, leading to a mismatch decisions correct option conditions will be very soon, the participants bring their apologies.
+
+The basis of the solution of this problem - it is dynamic programming.
+
+Status - (last, type, l), where the last - number of the last board, type characterizes the turn of the last board, and l - length of the remainder of the fence.
+
+Convert this dynamic is also very simple: iterate over the next number of the board, its rotation, check whether it is appropriate in the current state, and add the desired amount.
+
+Asymptotic behavior of solutions - O (n2 · len).
