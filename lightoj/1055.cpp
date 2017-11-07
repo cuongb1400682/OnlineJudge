@@ -11,6 +11,7 @@ using namespace std;
 const int dx[] = { 0, 1, 0, -1 };
 const int dy[] = { 1, 0, -1, 0 };
 
+
 struct Cell {
   int x, y;
   Cell(int x = 0, int y = 0) : x(x), y(y) {
